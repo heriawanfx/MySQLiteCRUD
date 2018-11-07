@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MySQLiteCRUD</string>
+    <string name="action_settings">Settings</string>
+    <string name="judul">Judul</string>
+    <string name="deskripsi">Deskripsi Catatan</string>
+    <string name="submit">Submit</string>
+</resources>
