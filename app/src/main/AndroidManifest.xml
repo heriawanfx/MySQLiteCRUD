@@ -19,7 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.FormActivity"></activity>
+        <activity android:name=".view.FormActivity" />
+        <activity android:name=".view.TambahActivity" />
+        <activity android:name=".view.UbahActivity"></activity>
     </application>
 
 </manifest>

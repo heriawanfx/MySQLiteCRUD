@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.fabAdd)
     public void onViewClicked() {
         Intent intent = new Intent(MainActivity.this, FormActivity.class);
-        startActivityForResult(intent, FormActivity.REQUEST_ADD);
+        startActivityForResult(intent, TambahActivity.REQUEST_ADD);
     }
 
     private class LoadCatatanAsync extends AsyncTask<Void, Void, ArrayList<Catatan>> {
@@ -113,21 +113,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == FormActivity.REQUEST_ADD){
-            if (resultCode == FormActivity.RESULT_ADD){
+        if (requestCode == TambahActivity.REQUEST_ADD){
+            if (resultCode == TambahActivity.RESULT_ADD){
                 new LoadCatatanAsync().execute();
                 showSnackbarMessage("Satu catatan berhasil ditambahkan");
             }
         }
         else if (requestCode == REQUEST_UPDATE) {
 
-            if (resultCode == FormActivity.RESULT_UPDATE) {
+            if (resultCode == UbahActivity.RESULT_UPDATE) {
                 new LoadCatatanAsync().execute();
                 showSnackbarMessage("Satu catatan berhasil diubah");
             }
 
-            else if (resultCode == FormActivity.RESULT_DELETE) {
-                int position = data.getIntExtra(FormActivity.EXTRA_POSITION, 0);
+            else if (resultCode == UbahActivity.RESULT_DELETE) {
+                int position = data.getIntExtra(UbahActivity.EXTRA_POSITION, 0);
                 list.remove(position);
                 adapter.setListCatatans(list);
                 adapter.notifyDataSetChanged();
